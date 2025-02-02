@@ -21,7 +21,7 @@ function Dashboard() {
                 const userRes = await axios.get(`${API_URL}/auth/userInfo`, { headers: { Authorization: `Bearer ${token}` } });
                 setUser(userRes.data);
 
-                const urlsRes = await axios.get(`${API_URL}/url/user-urls`, { headers: { Authorization: `Bearer ${token}` } });
+                const urlsRes = await axios.get(`${API_URL}/user-urls`, { headers: { Authorization: `Bearer ${token}` } });
                 console.log(urlsRes)
                 if (urlsRes.status === 404) {
                     setUrls([]);
@@ -42,7 +42,7 @@ function Dashboard() {
     const shortenUrl = async () => {
         try {
             const token = localStorage.getItem("token");
-            const res = await axios.post(`${API_URL}/url/shorten`, { originalUrl }, { headers: { Authorization: `Bearer ${token}` } });
+            const res = await axios.post(`${API_URL}/shorten`, { originalUrl }, { headers: { Authorization: `Bearer ${token}` } });
             setUrls([...urls, res.data]);
             setError("");
         } catch (err) {
@@ -71,7 +71,7 @@ function Dashboard() {
                 <ul className="dashboard-url-list">
                     {urls.map((url) => (
                         <li key={url.shortId} className="dashboard-url-item">
-                            <a className="dashboard-url-link" href={`quick-link-seven.vercel.app/url/${url.shortId}`} target="_blank" rel="noopener noreferrer">{`http://quick-link-seven.vercel.app/url/${url.shortId}`}</a>
+                            <a className="dashboard-url-link" href={`quick-link-seven.vercel.app/${url.shortId}`} target="_blank" rel="noopener noreferrer">{`http://quick-link-seven.vercel.app/${url.shortId}`}</a>
                         </li>
                     ))}
                 </ul>

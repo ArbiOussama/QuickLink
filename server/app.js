@@ -13,7 +13,7 @@ app.use(cors());
 
 // Routes
 app.use("/auth", authRoutes);
-app.use("/url", urlRoutes);
+app.use("", urlRoutes);
 
 mongoose
     .connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
