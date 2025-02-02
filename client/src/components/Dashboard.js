@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./Dashboard.css";
 
-const API_URL = "http://localhost:5000";
+const API_URL = "quick-link-seven.vercel.app";
 
 function Dashboard() {
     const [user, setUser] = useState(null);
@@ -71,7 +71,7 @@ function Dashboard() {
                 <ul className="dashboard-url-list">
                     {urls.map((url) => (
                         <li key={url.shortId} className="dashboard-url-item">
-                            <a className="dashboard-url-link" href={`http://localhost:5000/url/${url.shortId}`} target="_blank" rel="noopener noreferrer">{`http://localhost:5000/url/${url.shortId}`}</a>
+                            <a className="dashboard-url-link" href={`quick-link-seven.vercel.app/url/${url.shortId}`} target="_blank" rel="noopener noreferrer">{`http://quick-link-seven.vercel.app/url/${url.shortId}`}</a>
                         </li>
                     ))}
                 </ul>

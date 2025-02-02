@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./Register.css";
 
-const API_URL = "http://localhost:5000";
+const API_URL = "quick-link-seven.vercel.app";
 
 function Register() {
     const [username, setUsername] = useState("");
