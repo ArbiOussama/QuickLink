@@ -14,6 +14,7 @@ router.post("/shorten", authMiddleware, async (req, res) => {
         const shortId = shortid.generate();
         const newUrl = new URL({ userId: req.user.id, originalUrl, shortId });
         await newUrl.save();
+        console.log("New URL saved:", newUrl);
 
         res.json(newUrl);
     } catch (err) {
@@ -37,11 +38,10 @@ router.get("/user-urls", authMiddleware, async (req, res) => { // Updated endpoi
 // Redirect Shortened URL
 router.get("/:shortId", async (req, res) => {
     const { shortId } = req.params;
-    console.log(`Server running on port `)
     try {
         const urlEntry = await URL.findOne({ shortId });
-        if (!urlEntry) return res.status(404).json({ message: "URL not founda" });
-
+        if (!urlEntry) return res.status(404).json({ message: "URL not found" });
+        console.log("Redirecting to:", urlEntry.originalUrl);
         res.redirect(urlEntry.originalUrl);
     } catch (err) {
         res.status(500).json({ error: err.message });
