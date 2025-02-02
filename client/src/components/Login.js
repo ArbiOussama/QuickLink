@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./Login.css";
 
-const API_URL = "quick-link-seven.vercel.app";
+const API_URL = "https://quick-link-seven.vercel.app";
 
 function Login() {
     const [email, setEmail] = useState("");

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./Dashboard.css";
 
-const API_URL = "quick-link-seven.vercel.app";
+const API_URL = "https://quick-link-seven.vercel.app";
 
 function Dashboard() {
     const [user, setUser] = useState(null);
