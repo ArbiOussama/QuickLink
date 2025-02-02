@@ -23,7 +23,7 @@ router.post("/shorten", authMiddleware, async (req, res) => {
 });
 
 // Get User's URLs
-router.get("/user-urls", authMiddleware, async (req, res) => { // Updated endpoint
+router.get("/user-urls", authMiddleware, async (req, res) => {
     try {
         const urls = await URL.find({ userId: req.user.id });
         console.log("Fetched URLs:", urls);

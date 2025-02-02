@@ -71,7 +71,7 @@ function Dashboard() {
                 <ul className="dashboard-url-list">
                     {urls.map((url) => (
                         <li key={url.shortId} className="dashboard-url-item">
-                            <a className="dashboard-url-link" href={`quick-link-seven.vercel.app/${url.shortId}`} target="_blank" rel="noopener noreferrer">{`http://quick-link-seven.vercel.app/${url.shortId}`}</a>
+                            <a className="dashboard-url-link" href={`https://quick-link-seven.vercel.app/${url.shortId}`} target="_blank" rel="noopener noreferrer">{`https://quick-link-seven.vercel.app/${url.shortId}`}</a>
                         </li>
                     ))}
                 </ul>
